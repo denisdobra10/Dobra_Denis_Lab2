@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Dobra_Denis_Lab2.Data;
 using Dobra_Denis_Lab2.Models;
 
-namespace Dobra_Denis_Lab2.Pages.Books
+namespace Dobra_Denis_Lab2.Pages.Publishers
 {
     public class CreateModel : PageModel
     {
@@ -21,14 +21,11 @@ namespace Dobra_Denis_Lab2.Pages.Books
 
         public IActionResult OnGet()
         {
-            ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
-            ViewData["AuthorID"] = new SelectList(_context.Set<Author>(), "ID", "AuthorName");
-
             return Page();
         }
 
         [BindProperty]
-        public Book Book { get; set; }
+        public Publisher Publisher { get; set; }
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
@@ -39,7 +36,7 @@ namespace Dobra_Denis_Lab2.Pages.Books
                 return Page();
             }
 
-            _context.Book.Add(Book);
+            _context.Publisher.Add(Publisher);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Dobra_Denis_Lab2.Data;
 using Dobra_Denis_Lab2.Models;
 
-namespace Dobra_Denis_Lab2.Pages.Books
+namespace Dobra_Denis_Lab2.Pages.Authors
 {
     public class IndexModel : PageModel
     {
@@ -19,14 +19,13 @@ namespace Dobra_Denis_Lab2.Pages.Books
             _context = context;
         }
 
-        public IList<Book> Book { get;set; } = default!;
+        public IList<Author> Author { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            if (_context.Book != null)
+            if (_context.Author != null)
             {
-                Book = await _context.Book.Include(b => b.Publisher).ToListAsync();
-                Book = await _context.Book.Include(b => b.Author).ToListAsync();
+                Author = await _context.Author.ToListAsync();
             }
         }
     }

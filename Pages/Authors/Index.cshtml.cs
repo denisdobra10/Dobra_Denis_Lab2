@@ -19,7 +19,7 @@ namespace Dobra_Denis_Lab2.Pages.Authors
             _context = context;
         }
 
-        public IList<Author> Author { get;set; } = default!;
+        public IList<Author> Author { get; set; } = default!;
 
         public async Task OnGetAsync()
         {

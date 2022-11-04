@@ -30,17 +30,14 @@ namespace Dobra_Denis_Lab2.Pages.Books
                 return NotFound();
             }
 
-            var book =  await _context.Book.FirstOrDefaultAsync(m => m.ID == id);
+            var book = await _context.Book.FirstOrDefaultAsync(m => m.ID == id);
             if (book == null)
             {
                 return NotFound();
             }
-
-
             Book = book;
-            ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
-            ViewData["AuthorID"] = new SelectList(_context.Set<Publisher>(), "ID","AuthorName");
-
+            ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID",
+"PublisherName");
             return Page();
         }
 
@@ -76,7 +73,7 @@ namespace Dobra_Denis_Lab2.Pages.Books
 
         private bool BookExists(int id)
         {
-          return _context.Book.Any(e => e.ID == id);
+            return _context.Book.Any(e => e.ID == id);
         }
     }
 }

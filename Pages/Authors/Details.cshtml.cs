@@ -19,7 +19,7 @@ namespace Dobra_Denis_Lab2.Pages.Authors
             _context = context;
         }
 
-      public Author Author { get; set; }
+        public Author Author { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -33,7 +33,7 @@ namespace Dobra_Denis_Lab2.Pages.Authors
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 Author = author;
             }
@@ -41,3 +41,4 @@ namespace Dobra_Denis_Lab2.Pages.Authors
         }
     }
 }
+

@@ -41,13 +41,6 @@
                 <span asp-validation-for="Book.PublisherID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Book.AuthorID" class="control-label">Author Name</label>
-                <select asp-for="Book.AuthorID" class="form-control" asp-items="ViewBag.PublisherID">
-                </select>
-                <span asp-validation-for="Book.AuthorID" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
@@ -57,7 +50,6 @@
 <div>
     <a asp-page="./Index">Back to List</a>
 </div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
